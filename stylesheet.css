@@ -1,3 +1,9 @@
+	h1 {
+		margin: 30px auto 20px;
+		color:black;
+		text-align: center;
+		font-family: Verdana, sans-serif;
+	}
 
 	body {
 		margin: 0;
@@ -11,15 +17,15 @@
 		margin: 0 auto;
 		padding: 7px;
 		border-radius: 5px;
-		background: #00fa9a;
-		box-shadow: 0 4px 0 #00fa9a;
+		background:#3cb371;
+		box-shadow: 0 4px 0 #006400;
 		cursor: pointer;
 	}
 	#btn:hover {
 		opacity: 0.8;
 	}
 	#card {
-		margin: 60px auto 20px;
+		margin: 0px auto 20px;
 		width: 400px;
 		height: 100px;
 		cursor: pointer;
@@ -36,18 +42,20 @@
 		border-radius: 5px;
 		position: absolute;
 		-webkit-backface-visibility: hidden;
+		perspective: 1000;
 	}
 	#card-front {
 		background: #fff;
 		color: #333;
 	}
 	#card-back {
-		background: #7cfc00;
+		background: #3cb371;
 		transform: rotateY(180deg);
 	}
 	.open {
 		transform: rotateY(180deg);
 	}
 
-	.html,body { height:100%; }
+	html,body { height:100%; }
+	
 	#visual { height:100%; }
