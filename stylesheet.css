@@ -27,7 +27,7 @@
 		line-height: 100px;
 		perspective: 100px;
 		transform-style: preserve-3d;
-		transition: transform .5s;
+		transition: transform .8s;
 	}
 	#card-front, #card-back {
 		display: block;
@@ -43,5 +43,9 @@
 	}
 	#card-back {
 		background: #00aaff;
+		transform: rotateY(180deg);
+	}
+	.open {
+		transform: rotateY(180deg);
 	}
 
