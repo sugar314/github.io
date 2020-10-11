@@ -11,8 +11,8 @@
 		margin: 0 auto;
 		padding: 7px;
 		border-radius: 5px;
-		background: #00aaff;
-		box-shadow: 0 4px 0 #0088cc;
+		background: #00fa9a;
+		box-shadow: 0 4px 0 #00fa9a;
 		cursor: pointer;
 	}
 	#btn:hover {
@@ -42,7 +42,7 @@
 		color: #333;
 	}
 	#card-back {
-		background: #00aaff;
+		background: #7cfc00;
 		transform: rotateY(180deg);
 	}
 	.open {
