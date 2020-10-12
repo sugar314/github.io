@@ -26,10 +26,10 @@
 	}
 	#card {
 		margin: 0px auto 20px;
-		width: 400px;
+		width: 500px;
 		height: 100px;
 		cursor: pointer;
-		font-size: 38px;
+		font-size: 30px;
 		line-height: 100px;
 		perspective: 100px;
 		transform-style: preserve-3d;
