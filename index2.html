@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Flash Cards</title>
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>	
+	
+	<div class="title-top">
+		<h1>第３回英単語テスト</h1>	
+
+	<div id="card">
+		<div id="card-front"></div>
+		<div id="card-back"></div>
+	</div>
+	<div id="btn">NEXT</div>
+	<script>
+		(function() {
+			'use strict';
+
+			var words = [
+			{'ja': 'conduct', 'en': '～を行う'},
+			{'ja': 'necessary', 'en': '必要な'},
+			{'ja': 'the middle', 'en': '中央'},
+			{'ja': 'data', 'en': 'データ'},
+			{'ja': 'measure', 'en': '(大きさ・量・速さなど)を測る'},
+			{'ja': 'Western', 'en': '西洋の'},
+			{'ja': 'gain', 'en': '～を得る'},
+			{'ja': 'the whole', 'en': '全体の'},
+			{'ja': 'article', 'en': '記事'},
+			{'ja': 'source', 'en': '(物・事の)源'},
+			{'ja': 'guess', 'en': '～を推測する'},
+			{'ja': 'personal', 'en': '個人の'},
+			{'ja': 'adapt', 'en': '～を適合させる'},
+			{'ja': 'gjaeral', 'en': '一般的な'},
+			{'ja': 'decade', 'en': '10年間'},
+			{'ja': 'quality', 'en': '質'},
+			{'ja': 'demand', 'en': '～を要求する'},
+			{'ja': 'daily', 'en': '毎日の'},
+			{'ja': 'reduce', 'en': '(数量・程度など)を減らす'},
+			{'ja': 'political', 'en': '政治(上)の'},
+			{'ja': 'challjage', 'en': '難題'},
+			{'ja': 'lack', 'en': '不足'},
+			{'ja': 'develop', 'en': '～を発展[発達]させる'},
+			{'ja': 'correct', 'en': '正しい'},
+			{'ja': 'prevjat A from doing', 'en': 'Aが～するのを妨げる'},
+			{'ja': 'serious', 'en': '深刻な'},
+			{'ja': 'shape', 'en': '形'},
+			{'ja': 'diet', 'en': '(日常の)食事'},
+			{'ja': 'contain', 'en': '(容器・本などが)～を含む'},
+			{'ja': 'available', 'en': '利用できる'},
+			{'ja': 'compare A with[to] B', 'en': 'AをBと比較する'},
+			{'ja': 'various', 'en': 'さまざまな'},
+			{'ja': 'note', 'en': 'メモ'},
+			{'ja': 'professor', 'en': '教授'},
+			{'ja': 'deal with A','en': 'Aを処理する'},
+			{'ja': 'be used to A', 'en': 'Aに慣れている'},
+			{'ja': 'prove', 'en': '～を証明する'},
+			{'ja': 'a single', 'en': 'たった1つの'},
+			{'ja': 'goal', 'en': '目標'},
+			{'ja': 'bill', 'en': '請求書'},
+			{'ja': 'solve', 'en': '～を解決する'},
+			{'ja': 'successful', 'en': '成功した'},
+			{'ja': 'prefer A to B', 'en': 'BよりAが好きである'},
+			{'ja': 'medical', 'en': '医学の'},
+			{'ja': 'figure', 'en': '数値'},
+			{'ja': 'risk', 'en': '危険(性)'},
+			{'ja': 'expect', 'en': '～を予想[予期]する'},
+			{'ja': 'ancijat', 'en': '古代の'},
+			{'ja': 'exist', 'en': '存在する'},
+			{'ja': 'scijatific', 'en': '科学の'},
+			{'ja': 'image', 'en': 'イメージ'},
+			{'ja': 'decision', 'en': '決定'},
+			{'ja': 'jacourage', 'en': '～を励ます'},
+			{'ja': 'native', 'en': '出生地の'},
+			{'ja': 'require', 'en': '～を必要とする'},
+			{'ja': 'total', 'en': '総計の'},
+			{'ja': 'function', 'en': '機能'},
+			{'ja': 'material', 'en': '材料'},
+			{'ja': 'prepare', 'en': '～を準備する'},
+			{'ja': 'due to A', 'en': 'Aが原因で'}
+			];
+
+
+			var card = document.getElementById('card');
+			var cardFront = document.getElementById('card-front');
+			var cardBack = document.getElementById('card-back');
+			var btn = document.getElementById('btn');
+			card.addEventListener('click', function() {
+				flip();
+			});
+			btn.addEventListener('click', function() {
+				next();
+			});
+
+			function next() {
+				if (card.className === 'open') {
+					card.addEventListener('transitionend', setCard);
+					flip();
+				} else {
+					setCard();
+				}
+			}
+				function setCard() {
+					var num = Math.floor(Math.random() * words.length);
+					cardFront.innerHTML = words[num]['ja'];
+					cardBack.innerHTML = words[num]['en'];
+					card.removeEventListener('transitionend', setCard);
+			}
+
+			setCard();
+
+			window.addEventListener('keyup', function(e) {
+				// console.log(e.keyCode);
+				if (e.keyCode === 70) {
+					flip();
+				} else if (e.keyCode === 78) {
+					next();
+				}
+			});
+
+			function flip() {
+				card.className = card.className === '' ? 'open' : '';
+			}
+		})();
+	</script>
+</body>
+</html>
